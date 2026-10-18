@@ -140,8 +140,6 @@ class DatabaseManager:
         if len(condition) > 1:
             raise ValueError('Invalid condition input, expected 1 condition, '
                              f'got {len(condition)}.')
-        if not fields:
-            fields = ('*',)
         if fields != ('*',):
             for field in fields:
                 if not isinstance(field, str):
