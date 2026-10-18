@@ -137,6 +137,9 @@ class DatabaseManager:
         if not isinstance(condition, dict[str, Any]):
             raise TypeError('Invalid condition, expected dict[str, Any], '
                             f'got {type(condition).__name__}')
+        if len(condition) > 1:
+            raise ValueError('Invalid condition input, expected 1 condition, '
+                             f'got {len(condition)}.')
         if not fields:
             fields = ('*',)
         if fields != ('*',):
